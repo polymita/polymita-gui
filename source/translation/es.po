@@ -191,8 +191,8 @@ msgid "Copyright"
 msgstr "Copyright ©"
 
 #: polymita/layouts/Footer.js:30
-msgid "DATEC - UCI <datec@uci.cu>"
-msgstr ""
+msgid "copyright-company"
+msgstr "YPA - <yoandrypa@gmail.com>"
 
 #: polymita/layouts/Header.js:28
 msgid "APPLICATION TITLE"
