@@ -1,0 +1,245 @@
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: you@your.org\n"
+"POT-Creation-Date: 2015-09-09 00:15-0500\n"
+"PO-Revision-Date: 2015-09-09 00:15-0500\n"
+"Last-Translator: you <you@your.org>\n"
+"Language-Team: Team <yourteam@your.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: polymita/dialogs/AbstractForm.js:31 polymita/dialogs/AbstractDialog.js:55
+msgid "Accept"
+msgstr ""
+
+#: polymita/dialogs/AbstractForm.js:32 polymita/dialogs/AbstractDialog.js:56
+msgid "Cancel"
+msgstr ""
+
+#: polymita/dialogs/Confirm.js:25
+msgid "Confirmation"
+msgstr ""
+
+#: polymita/dialogs/Confirm.js:60
+msgid "yes"
+msgstr ""
+
+#: polymita/dialogs/Confirm.js:61
+msgid "no"
+msgstr ""
+
+#: polymita/dialogs/Logon.js:12
+msgid "Authentication"
+msgstr ""
+
+#: polymita/dialogs/Logon.js:34 polymita/model/Observer.js:17
+msgid "Username"
+msgstr ""
+
+#: polymita/dialogs/Logon.js:35
+msgid "Password"
+msgstr ""
+
+#: polymita/dialogs/Logon.js:47
+msgid "Login"
+msgstr ""
+
+#: polymita/dialogs/Logon.js:115
+msgid "Successful login"
+msgstr ""
+
+#: polymita/request/AbstractResource.js:283 polymita/dialogs/Logon.js:140
+#: polymita/request/Session.js:118
+msgid "Failed connection with server."
+msgstr ""
+
+#: polymita/form/ImportTask.js:10 polymita/form/Task.js:6
+msgid "Task plan data"
+msgstr ""
+
+#: polymita/form/ImportTask.js:22 polymita/form/Reports.js:20
+#: polymita/form/Task.js:91
+msgid "Work plan"
+msgstr ""
+
+#: polymita/form/Reports.js:9
+msgid "Report"
+msgstr ""
+
+#: polymita/form/Reports.js:27 polymita/form/Task.js:38
+msgid "Start date"
+msgstr ""
+
+#: polymita/form/Reports.js:33 polymita/form/Task.js:44
+msgid "Finish date"
+msgstr ""
+
+#: polymita/form/Reports.js:38 polymita/form/Task.js:53
+msgid "Category"
+msgstr ""
+
+#: polymita/form/Reports.js:42
+msgid "Template"
+msgstr ""
+
+#: polymita/form/Reports.js:54
+msgid "Format"
+msgstr ""
+
+#: polymita/form/Workplan.js:14 polymita/form/Task.js:19
+msgid "Id"
+msgstr ""
+
+#: polymita/form/Workplan.js:20 polymita/form/Task.js:28
+msgid "Title"
+msgstr ""
+
+#: polymita/form/Task.js:32
+msgid "Location"
+msgstr ""
+
+#: polymita/form/Task.js:48
+msgid "Notifications"
+msgstr ""
+
+#: polymita/tables/Tasks.js:47 polymita/form/Task.js:57
+msgid "Never"
+msgstr ""
+
+#: polymita/tables/Tasks.js:48 polymita/form/Task.js:58
+msgid "Daily"
+msgstr ""
+
+#: polymita/tables/Tasks.js:49 polymita/form/Task.js:59
+msgid "Weekly"
+msgstr ""
+
+#: polymita/tables/Tasks.js:50 polymita/form/Task.js:60
+msgid "Monthly"
+msgstr ""
+
+#: polymita/form/Task.js:62
+msgid "Frequently type"
+msgstr ""
+
+#: polymita/form/Task.js:67
+msgid "Frequently"
+msgstr ""
+
+#: polymita/form/Task.js:73
+msgid "Repeated until"
+msgstr ""
+
+#: polymita/form/Task.js:79
+msgid "Days week"
+msgstr ""
+
+#: polymita/form/Workplan.js:45 polymita/form/Task.js:140
+#: polymita/tables/Observer.js:56
+msgid "Operation successful"
+msgstr ""
+
+#: polymita/form/Workplan.js:6
+msgid "Work plan data"
+msgstr ""
+
+#: polymita/form/Workplan.js:25
+msgid "Objectives"
+msgstr ""
+
+#: polymita/form/Workplan.js:29
+msgid "Is public"
+msgstr ""
+
+#: polymita/form/field/DaysWeek.js:7
+msgid "Sunday"
+msgstr ""
+
+#: polymita/form/field/DaysWeek.js:8
+msgid "Monday"
+msgstr ""
+
+#: polymita/form/field/DaysWeek.js:9
+msgid "Tuesday"
+msgstr ""
+
+#: polymita/form/field/DaysWeek.js:10
+msgid "Wednesday"
+msgstr ""
+
+#: polymita/form/field/DaysWeek.js:11
+msgid "Thursday"
+msgstr ""
+
+#: polymita/form/field/DaysWeek.js:12
+msgid "Friday"
+msgstr ""
+
+#: polymita/form/field/DaysWeek.js:13
+msgid "Saturday"
+msgstr ""
+
+#: polymita/form/field/SearchTextField.js:20
+msgid "Filter"
+msgstr ""
+
+#: polymita/layouts/Footer.js:28
+msgid "Copyright"
+msgstr "Copyright ©"
+
+#: polymita/layouts/Footer.js:30
+msgid "DATEC - UCI <datec@uci.cu>"
+msgstr ""
+
+#: polymita/layouts/Header.js:28
+msgid "APPLICATION TITLE"
+msgstr ""
+
+#: polymita/layouts/MainBox.js:41
+msgid "This module is empty."
+msgstr ""
+
+#: polymita/layouts/MainBox.js:51
+msgid "Class no found."
+msgstr ""
+
+#: polymita/model/Observer.js:18
+msgid "Name"
+msgstr ""
+
+#: polymita/model/Observer.js:19
+msgid "Area"
+msgstr ""
+
+#: polymita/model/Observer.js:20
+msgid "Office"
+msgstr ""
+
+#: polymita/model/Workplan.js:11
+msgid "Workplans"
+msgstr ""
+
+#: polymita/request/Session.js:91
+msgid "Successful logout"
+msgstr ""
+
+#: polymita/tables/cellrenderer/IconVisibility.js:16
+#: polymita/tables/cellrenderer/IconPublicPrivate.js:16
+msgid "Private"
+msgstr ""
+
+#: polymita/tables/cellrenderer/IconVisibility.js:22
+#: polymita/tables/cellrenderer/IconPublicPrivate.js:19
+msgid "Public"
+msgstr ""
+
+#: polymita/tables/cellrenderer/IconVisibility.js:19
+msgid "Protected"
+msgstr ""
+
+#: polymita/trees/Modules.js:10
+msgid "Modules"
+msgstr ""

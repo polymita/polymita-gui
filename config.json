@@ -1,0 +1,58 @@
+{
+    "name": "polymita-gui",
+    "include": [
+        {
+            "path": "${QOOXDOO_PATH}/tool/data/config/application.json"
+        }
+    ],
+    "export": [
+        "api",
+        "api-data",
+        "build",
+        "clean",
+        "distclean",
+        "dependencies",
+        "fix",
+        "info",
+        "lint",
+        "migration",
+        "pretty",
+        "profiling",
+        "source",
+        "source-all",
+        "source-hybrid",
+        "source-server",
+        "source-server-reload",
+        "source-httpd-config",
+        "test",
+        "test-source",
+        "translation",
+        "validate-config",
+        "validate-manifest",
+        "watch"
+    ],
+    "default-job": "source-hybrid",
+    "let": {
+        "APPLICATION": "polymita",
+        "QOOXDOO_PATH": "./bower_components/qooxdoo-5.0.1-sdk",
+        "QXTHEME": "polymita.theme.Theme",
+        "API_EXCLUDE": [
+            "qx.test.*",
+            "${APPLICATION}.theme.*",
+            "${APPLICATION}.test.*"
+        ],
+        "LOCALES": [
+            "es"
+        ],
+        "CACHE": "./cache/qx${QOOXDOO_VERSION}",
+        "ROOT": ".",
+        "BUILD_PATH": "${ROOT}/../${APPLICATION}-build",
+        "QXICONTHEME": [
+            "Oxygen"
+        ]
+    },
+    // You only need to edit the remainder of this file, if you want to customize
+    // specific jobs, or add own job definitions.
+
+    "jobs": {}
+}

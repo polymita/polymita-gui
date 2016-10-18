@@ -1,0 +1,28 @@
+{
+    "info": {
+        "name": "polymita-gui",
+        "summary": "GUI application of Polymita suite.",
+        "description": "This GUI application provides all interface for managing a Polymita application.",
+        "homepage": "https://github.com/yoandrypa/polymita-gui",
+        "license": "LGPL-3.0",
+        "authors": [
+            {
+                "name": "Yoandry Pacheco Aguila",
+                "email": "yoandrypa@gmail.com"
+            }
+        ],
+        "version": "1.0.0",
+        "qooxdoo-versions": [
+            "5.0.1"
+        ]
+    },
+    "provides": {
+        "namespace": "polymita",
+        "encoding": "utf-8",
+        "class": "source/class",
+        "resource": "source/resource",
+        "translation": "source/translation",
+        "type": "application"
+    }
+}
+

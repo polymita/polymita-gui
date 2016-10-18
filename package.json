@@ -1,0 +1,33 @@
+{
+    "name": "polymita-gui",
+    "version": "1.0.0",
+    "author": {
+        "name": "Yoandry Pacheco Aguila",
+        "email": "yoandrypa@gmail.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/yoandrypa/polymita-gui.git"
+    },
+    "bugs": {
+        "url": "https://github.com/yoandrypa/polymita-gui/issues"
+    },
+    "homepage": "https://github.com/yoandrypa/polymita-gui",
+    "license": "LGPL-3.0",
+    "licenses": [
+        {
+            "type": "LGPL-3.0",
+            "url": "http://spdx.org/licenses/LGPL-3.0.html#licenseText"
+        },
+        {
+            "type": "EPL-1.0",
+            "url": "http://spdx.org/licenses/EPL-1.0.html#licenseText"
+        }
+    ],
+    "devDependencies": {
+        "bower": "^1.7.9"
+    },
+    "scripts": {
+        "postinstall": "bower install"
+    }
+}
