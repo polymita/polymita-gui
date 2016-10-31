@@ -34,7 +34,7 @@
     "default-job": "source-hybrid",
     "let": {
         "APPLICATION": "polymita",
-        "QOOXDOO_PATH": "./bower_components/qooxdoo-5.0.1-sdk",
+        "QOOXDOO_PATH": "./node_modules/qooxdoo-sdk",
         "QXTHEME": "polymita.theme.Theme",
         "API_EXCLUDE": [
             "qx.test.*",
