@@ -42,7 +42,7 @@
             "${APPLICATION}.test.*"
         ],
         "LOCALES": [
-            "es"
+            "en"
         ],
         "CACHE": "./cache/qx${QOOXDOO_VERSION}",
         "ROOT": ".",

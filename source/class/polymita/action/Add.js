@@ -10,8 +10,11 @@ qx.Class.define("polymita.action.Add", {
 
     members: {
         onExecute: function () {
-            var caption = polymita.I18n.trans(this.getManagement().getI18n(), 'Titles', 'Add'),
-                dlg = new polymita.form.dialog.Custom(this.getManagement(), 'add', caption, this.getIcon());
+            var management = this.getManagement(),
+                i18nCatalog = management.getI18n(),
+                itemLabel = polymita.I18n.trans(i18nCatalog, 'Labels', 'SINGLE-ITEM-REFERENCE'),
+                caption = polymita.I18n.trans(i18nCatalog, 'Titles', 'Add', [itemLabel]),
+                dlg = new polymita.form.dialog.Custom(management, 'add', caption, this.getIcon());
 
             dlg.addListener('accept', this.onAccept, this);
             dlg.open();

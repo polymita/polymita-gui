@@ -7,7 +7,10 @@ qx.Class.define("polymita.action.Edit", {
 
     members: {
         onExecute: function () {
-            var caption = polymita.I18n.trans(this.getManagement().getI18n(), 'Titles', 'Edit'),
+            var management = this.getManagement(),
+                i18nCatalog = management.getI18n(),
+                itemLabel = polymita.I18n.trans(i18nCatalog, 'Labels', 'SINGLE-ITEM-REFERENCE'),
+                caption = polymita.I18n.trans(i18nCatalog, 'Titles', 'Edit', [itemLabel]),
                 dlg = new polymita.form.dialog.Custom(this.getManagement(), 'edit', caption, this.getIcon());
 
             dlg.addListener('accept', this.onAccept, this);

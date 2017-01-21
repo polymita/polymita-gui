@@ -18,7 +18,8 @@ qx.Class.define("polymita.management.Page", {
         this.set({
             showCloseButton: true,
             layout: layoutClass,
-            allowGrowX: true
+            allowGrowX: true,
+            module: module
         });
 
         components.forEach(function (componentSettings, index) {
@@ -46,6 +47,10 @@ qx.Class.define("polymita.management.Page", {
         globalSearchText: {
             check: 'String',
             init: ''
+        },
+
+        module: {
+            check: 'Object'
         }
     },
 
