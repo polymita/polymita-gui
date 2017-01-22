@@ -40,11 +40,13 @@ qx.Class.define("polymita.tree.Modules", {
                 node;
 
             nodes.forEach(function (item) {
+                var label = polymita.I18n.trans(item.i18nCatalog, 'Labels', 'MODULE-REFERENCE');
+
                 if (item.children) {
-                    node = dataModel.addBranch(root, item.title, true);
+                    node = dataModel.addBranch(root, label, true);
                     this.__addNodes(node, item.children);
                 } else {
-                    node = dataModel.addLeaf(root, item.title)
+                    node = dataModel.addLeaf(root, label)
                 }
                 dataModel.setColumnData(node, 0, item);
             }, this);
@@ -81,7 +83,7 @@ qx.Class.define("polymita.tree.Modules", {
             return rootNodes;
         },
 
-        loadModules: function(){
+        loadModules: function () {
             var request = new polymita.request.Modules();
 
             request.findAll('place', { disabled: false }, function (response) {

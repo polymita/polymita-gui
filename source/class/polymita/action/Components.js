@@ -12,7 +12,10 @@ qx.Class.define("polymita.action.Components", {
 
             request.findRange(0, 1, null, { name: 'components' }, function (response) {
                 var componentsModule = response.data[0],
-                    label = [currentModule.title, componentsModule.title];
+                    label = [
+                        polymita.I18n.trans(currentModule.i18nCatalog, 'Labels', 'MODULE-REFERENCE'),
+                        polymita.I18n.trans(componentsModule.i18nCatalog, 'Labels', 'MODULE-REFERENCE')
+                    ];
 
                 q.messaging.emit("Application", "open-module", componentsModule, {
                     label: label,

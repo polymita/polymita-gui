@@ -46,7 +46,9 @@ qx.Class.define("polymita.layout.MainBox", {
                         if (response.count == 0) {
                             if (!module.children) {
                                 q.messaging.emit('Application', 'warn',
-                                    polymita.I18n.trans('Modules', 'Messages', 'EMPTY', [module.title])
+                                    polymita.I18n.trans('Modules', 'Messages', 'EMPTY', [
+                                        polymita.I18n.trans(module.i18nCatalog, 'Labels', 'MODULE-REFERENCE')
+                                    ])
                                 );
                             }
                         } else {

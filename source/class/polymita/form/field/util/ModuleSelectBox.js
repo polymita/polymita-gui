@@ -26,8 +26,9 @@ qx.Class.define("polymita.form.field.util.ModuleSelectBox", {
         var request = new polymita.request.Modules(true);
         request.findAll('title', null, function (response) {
             if (response.successful) {
-                response.data.forEach(function (item) {
-                    this.add(new qx.ui.form.ListItem(item.title, null, item.id));
+                response.data.forEach(function (module) {
+                    var label = polymita.I18n.trans(module.i18nCatalog, 'Labels', 'MODULE-REFERENCE')
+                    this.add(new qx.ui.form.ListItem(label, null, module.id));
                 }, this);
             } else {
                 var msg = polymita.I18n.trans('Common', 'Messages', 'FAILED LOAD');

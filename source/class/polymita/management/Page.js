@@ -10,7 +10,7 @@ qx.Class.define("polymita.management.Page", {
         if (customData.label) {
             label = qx.lang.Type.isArray(customData.label) ? customData.label.join(' / ') : customData.label;
         } else {
-            label = module.title;
+            label = polymita.I18n.trans(module.i18nCatalog, 'Labels', 'MODULE-REFERENCE');
         }
 
         this.base(arguments, label);

@@ -14,9 +14,9 @@ qx.Class.define("polymita.action.Actions", {
                 var actionsModule = response.data[0],
                     mainModule = this.getManagement().getCustomData().mainModule,
                     label = [
-                        mainModule.title,
+                        polymita.I18n.trans(mainModule.i18nCatalog, 'Labels', 'MODULE-REFERENCE'),
                         polymita.I18n.trans('Modules', 'Labels', 'component') + '-' + currentModule.id,
-                        actionsModule.title
+                        polymita.I18n.trans(actionsModule.i18nCatalog, 'Labels', 'MODULE-REFERENCE')
                     ];
 
                 q.messaging.emit("Application", "open-module", actionsModule, {
