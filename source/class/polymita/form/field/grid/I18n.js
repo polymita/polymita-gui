@@ -32,6 +32,7 @@ qx.Class.define("polymita.form.field.grid.I18n", {
     construct: function () {
         this.base(arguments, '{...}');
         this.addListener('execute', this._onOpenDlg, this);
+        this.addListener('changeValue', this._onChangeValue, this);
     },
 
     events: {
@@ -65,6 +66,13 @@ qx.Class.define("polymita.form.field.grid.I18n", {
 
                 dlg.open();
             }
+        },
+
+        _onChangeValue: function (e) {
+            var value = this.getValue() || {},
+                text = value.active ? 'yes' : 'no';
+
+            this.setLabel(polymita.I18n.trans(text));
         }
     }
 });
