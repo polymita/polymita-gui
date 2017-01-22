@@ -13,9 +13,16 @@ qx.Class.define("polymita.form.dialog.GridI18n", {
             var active = new polymita.form.field.boolean.CheckBox,
                 catalog = new polymita.form.field.TextField,
                 subCatalog = new polymita.form.field.TextField,
-                name = new polymita.form.field.TextField;
+                name = new polymita.form.field.TextField,
+                placeholder = polymita.I18n.trans('I18ns', 'Labels', 'Name or {{field}}');
 
-            name.setWidth(200);
+            catalog.setPlaceholder(placeholder);
+            subCatalog.setPlaceholder(placeholder);
+            name.setPlaceholder(placeholder);
+            name.setWidth(250);
+            active.bind('value', catalog, 'enabled');
+            active.bind('value', subCatalog, 'enabled');
+            active.bind('value', name, 'enabled');
 
             form.add(active, polymita.I18n.trans('active'), null, 'active');
             form.add(catalog, polymita.I18n.trans('I18ns', 'Labels', 'catalog'), null, 'catalog');
