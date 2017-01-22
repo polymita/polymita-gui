@@ -28,10 +28,12 @@ qx.Class.define("polymita.I18n", {
          * @param subCatalog {String?'Labels'}
          * @param name {String}
          * @param args {Map?}
-         * @return {String}
+         * @param create {boolean?true}
+         * @return {String|boolean}
          */
-        trans: function (catalog, subCatalog, name, args) {
+        trans: function (catalog, subCatalog, name, args, create) {
             var aux;
+
             if (arguments.length == 1) {
                 aux = catalog.split('.');
                 name = aux.pop();
@@ -45,6 +47,13 @@ qx.Class.define("polymita.I18n", {
                 catalog = aux.pop() || 'Common';
             }
 
+            if (typeof args != 'undefined' && qx.lang.Type.isBoolean(args)) {
+                create = args;
+                args = [];
+            }
+
+            create = (typeof create == 'undefined' || create !== false)
+
             var manager = qx.locale.Manager.getInstance(),
                 i18nId = catalog + '.' + subCatalog + '.' + name,
                 value = manager.translate(i18nId, args || []);
@@ -55,26 +64,32 @@ qx.Class.define("polymita.I18n", {
             }
 
             if (value == i18nId) {
-                var manager = qx.locale.Manager.getInstance(),
-                    request = new polymita.request.I18ns(),
-                    value = '[' + catalog + '.' + subCatalog + '.' + name + ']',
-                    tran = {};
+                if (create) {
+                    var manager = qx.locale.Manager.getInstance(),
+                        request = new polymita.request.I18ns(),
+                        value = '[' + catalog + '.' + subCatalog + '.' + name + ']',
+                        tran = {};
 
-                tran[catalog + '.' + subCatalog + '.' + name] = value;
-                manager.addTranslation(manager.getLocale(), tran);
+                    tran[catalog + '.' + subCatalog + '.' + name] = value;
+                    manager.addTranslation(manager.getLocale(), tran);
 
-                request.create({
-                    "name": name,
-                    "locale": manager.getLocale(),
-                    "catalog": catalog,
-                    "subCatalog": subCatalog,
-                    "value": value
-                }, function (response) {
-                    q.messaging.emit('Application', 'info', "Add " + value + " to i18n.");
-                });
+                    request.create({
+                        "name": name,
+                        "locale": manager.getLocale(),
+                        "catalog": catalog,
+                        "subCatalog": subCatalog,
+                        "value": value
+                    }, function (response) {
+                        q.messaging.emit('Application', 'info', "Add " + value + " to i18n.");
+                    });
+                    return String('[' + catalog + '.' + subCatalog + '.' + name + ']');
+
+                } else {
+                    return false
+                }
             }
 
-            return String((value == i18nId) ? '[' + catalog + '.' + subCatalog + '.' + name + ']' : value);
+            return String(value);
         }
 
     }

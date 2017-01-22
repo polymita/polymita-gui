@@ -123,21 +123,25 @@ qx.Class.define("polymita.management.Properties", {
             if (properties) {
                 // Create and add items into form.
                 var values = this.getPropertiesValues(),
-                    controller = new qx.data.controller.Form(null, this.__form);
+                    controller = new qx.data.controller.Form(null, this.__form),
+                    catalog = this.getCustomData().mainModule.i18nCatalog;
 
                 this.__cleanForm();
 
                 Object.keys(properties).forEach(function (name) {
                     var widgetClass = this.getWidgetClass(properties[name].type) || polymita.form.field.TextField,
                         validator = widgetClass.validatorClass ? new widgetClass.validatorClass : null,
-                        field = new widgetClass();
+                        field = new widgetClass(),
+                        label = polymita.I18n.trans(catalog, 'property', name, false) ||
+                            polymita.I18n.trans('Properties', 'Labels', name, false) ||
+                            polymita.I18n.trans(catalog, 'property', name, true);
 
                     // Set field properties.
                     field.setFromJSON(properties[name].settings);
                     field.setMinWidth(80);
                     field.setAllowGrowY(false);
 
-                    this.__form.add(field, polymita.I18n.trans('Properties', 'Labels', name), validator, name, this.__form);
+                    this.__form.add(field, label, validator, name, this.__form);
                 }, this);
 
                 this.initializeItems();
