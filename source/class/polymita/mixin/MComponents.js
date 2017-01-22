@@ -81,8 +81,7 @@ qx.Mixin.define("polymita.mixin.MComponents", {
                 polymita.form.field.util.ManagementSelectBox,
                 polymita.form.field.util.ModuleFilteringSelectBox,
                 polymita.form.field.util.ModuleSelectBox,
-                polymita.form.field.util.I18nActionName,
-                polymita.form.field.util.I18nModuleName
+                polymita.form.field.util.I18nActionName
             ]);
 
             this.registerFormFieldValidators([

@@ -38,6 +38,10 @@ qx.Class.define("polymita.form.field.TextField", {
             gridRendererStyle: {
                 type: polymita.form.field.grid.RendererStyle,
                 settings: { required: true, value: '{}' }
+            },
+            i18n: {
+                type: polymita.form.field.grid.I18n,
+                settings: { required: true, value: '{}' }
             }
         }
     },
