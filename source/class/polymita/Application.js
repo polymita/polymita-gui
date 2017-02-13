@@ -25,7 +25,7 @@ qx.Class.define("polymita.Application", {
         qx.util.LibraryManager.getInstance().set('polymita', "resourceUri", '.');
         qx.util.LibraryManager.getInstance().set('qx', "resourceUri", '.');
 
-        this.loadProperties(polymita.Application);
+        this.loadProperties('application.json');
     },
 
     members: {

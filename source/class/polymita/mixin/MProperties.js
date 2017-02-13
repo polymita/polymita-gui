@@ -1,15 +1,21 @@
 qx.Mixin.define("polymita.mixin.MProperties", {
     members: {
         loadProperties: function (pUrlOrClass, pCallback) {
-            var url, id;
+            var url, id, path;
 
-            if (!pUrlOrClass) {
-                url = qx.util.ResourceManager.getInstance().toUri("polymita/properties/" + this.classname + ".json");
-            } else if (qx.lang.Type.isString(pUrlOrClass)) {
-                url = pUrlOrClass;
+            pUrlOrClass = pUrlOrClass || this.constructor;
+
+            if (qx.lang.Type.isString(pUrlOrClass)) {
+                if (!pUrlOrClass.match(/\//)) {
+                    path = this.constructor.classname.replace(/\.[^\.]+$/, '').replace(/\./g, '/');
+                    pUrlOrClass = path + '/properties/' + pUrlOrClass;
+                }
             } else {
-                url = qx.util.ResourceManager.getInstance().toUri("polymita/properties/" + pUrlOrClass.classname + ".json");
+                path = pUrlOrClass.classname.replace(/\.[^\.]+$/, '').replace(/\./g, '/');
+                pUrlOrClass = qx.util.ResourceManager.getInstance().toUri(path + "/properties/" + pUrlOrClass.classname + ".json");
             }
+
+            url = qx.util.ResourceManager.getInstance().toUri(pUrlOrClass);
 
             polymita["properties"] = polymita["properties"] || {};
             id = qx.util.Base64.encode(url);
