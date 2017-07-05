@@ -79,6 +79,10 @@ qx.Class.define("polymita.Application", {
             q.messaging.on("Application", "warn", this.onTipWarning, this);
             q.messaging.on("Application", "error", this.onTipError, this);
             q.messaging.on("Application", "update-session", this.onUpdateSession, this);
+
+            // Set application title in html page.
+            var qTitle = document.getElementsByTagName('title')[0];
+            if (qTitle) qTitle.innerText = polymita.I18n.trans('APPLICATION-TITLE');
         },
 
         /**
