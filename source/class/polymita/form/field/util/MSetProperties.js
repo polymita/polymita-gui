@@ -17,7 +17,7 @@ qx.Mixin.define("polymita.form.field.util.MSetProperties", {
         setFromJSON: function (data) {
             data = qx.lang.Type.isString(data) ? qx.lang.Json.parse(data) : data;
             for (var prop in data) {
-                if (qx.Class.hasProperty(this.constructor, prop)) {
+                if (prop == 'value' || qx.Class.hasProperty(this.constructor, prop)) {
                     this.set(prop, data[prop]);
                 }
             }
