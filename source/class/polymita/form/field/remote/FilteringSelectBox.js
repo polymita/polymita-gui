@@ -20,7 +20,7 @@ qx.Class.define("polymita.form.field.remote.FilteringSelectBox", {
             },
             filterOperator: {
                 type: polymita.form.field.TextField,
-                settings: { required: true, value: 'ILIKE' }
+                settings: { required: true, value: 'LIKE' }
             },
             serviceUrl: {
                 type: polymita.form.field.TextField,
@@ -114,7 +114,7 @@ qx.Class.define("polymita.form.field.remote.FilteringSelectBox", {
 
         filterOperator: {
             check: 'String',
-            init: 'ILIKE'
+            init: 'LIKE'
         }
     },
 
@@ -156,7 +156,7 @@ qx.Class.define("polymita.form.field.remote.FilteringSelectBox", {
 
                 case "list":
                     // Get the list from the AbstractSelectBox
-                    control = this.base(arguments, id)
+                    control = this.base(arguments, id);
 
                     // Change selection mode
                     control.setSelectionMode("single");
@@ -215,9 +215,7 @@ qx.Class.define("polymita.form.field.remote.FilteringSelectBox", {
         },
 
         findItem: function (value) {
-            var request = new polymita.request.Customs(this.getServiceUrl(), true),
-                labelAttr = this.getLabelAttr(),
-                valueAttr = this.getValueAttr();
+            var request = new polymita.request.Customs(this.getServiceUrl(), true);
 
             request.find(value, function (response) {
                 if (response.successful) {

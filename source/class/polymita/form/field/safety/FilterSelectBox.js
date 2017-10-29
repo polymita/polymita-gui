@@ -19,11 +19,12 @@ qx.Class.define("polymita.form.field.safety.FilterSelectBox", {
     construct: function () {
         this.base(arguments);
 
-        var request = new polymita.request.Filters(true);
-        request.findAll('name', null, function (response) {
+        var request = new polymita.request.I18ns(true);
+        request.findAll('name', { subCatalog: 'Filters' }, function (response) {
             if (response.successful) {
                 response.data.forEach(function (item) {
-                    this.add(new qx.ui.form.ListItem(item.name, null, item.pattern));
+                    var label = polymita.I18n.trans('Filters', 'Labels', item.name);
+                    this.add(new qx.ui.form.ListItem(label, null, item.value));
                 }, this);
             } else {
                 var msg = polymita.I18n.trans('Common', 'Messages', 'FAILED LOAD');

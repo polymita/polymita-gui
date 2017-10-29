@@ -1,6 +1,9 @@
 qx.Class.define("polymita.form.field.TextArea", {
     extend: qx.ui.form.TextArea,
-    include: polymita.form.field.util.MSetProperties,
+    include: [
+        polymita.form.field.util.MSetProperties,
+        polymita.form.field.util.MPatterns
+    ],
 
     statics: {
         cellRendererType: polymita.table.cellrenderer.String,
@@ -39,34 +42,6 @@ qx.Class.define("polymita.form.field.TextArea", {
                 type: polymita.form.field.grid.RendererStyle,
                 settings: { required: true, value: '{}' }
             }
-        }
-    },
-
-    properties: {
-        pattern: {
-            check: 'String',
-            init: '.*'
-        },
-
-        filterIn: {
-            check: 'String',
-            nullable: true,
-            apply: '__applyFilterIn'
-        },
-
-        minLength: {
-            check: 'Integer',
-            init: 0
-        }
-    },
-
-    members: {
-        /**
-         * Create an set filter value with new RegExp from given string in filterIn property.
-         * @param value {String} Regular expression as string.
-         */
-        __applyFilterIn: function (value) {
-            this.setFilter(new RegExp(value));
         }
     }
 });
