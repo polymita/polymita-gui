@@ -2,23 +2,27 @@ qx.Class.define("polymita.I18n", {
     statics: {
         setup: function () {
             var manager = qx.locale.Manager.getInstance(),
-                request = new polymita.request.I18ns(true);
+                request = new polymita.request.I18ns(true),
+                locale = manager.getLocale(),
+                translationMap = {},
 
-            request.findAll('created_at', { locale: manager.getLocale() }, function (response) {
-                if (response.successful) {
-                    var translationMap = {};
+                fillTranslationMap = function (response) {
+                    if (response.successful) {
 
-                    response.data.forEach(function (item) {
-                        var i18nId = item.catalog + '.' + item.subCatalog + '.' + item.name;
-                        translationMap[i18nId] = item.value;
-                    });
+                        response.data.forEach(function (item) {
+                            var i18nId = item.catalog + '.' + item.subCatalog + '.' + item.name;
+                            translationMap[i18nId] = item.value;
+                        });
 
-                    manager.addTranslation(manager.getLocale(), translationMap);
-                } else {
-                    var msg = polymita.I18n.trans('Common', 'Messages', 'FAILED LOAD');
-                    q.messaging.emit('Application', 'error', msg);
-                }
-            }, this)
+                    } else {
+                        var msg = polymita.I18n.trans('Common', 'Messages', 'FAILED LOAD');
+                        q.messaging.emit('Application', 'error', msg);
+                    }
+                };
+
+            if (locale != 'en') request.findAll('created_at', { locale: 'en' }, fillTranslationMap, this);
+            request.findAll('created_at', { locale: locale }, fillTranslationMap, this);
+            manager.addTranslation(manager.getLocale(), translationMap);
         },
 
         /**
