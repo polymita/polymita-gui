@@ -47,7 +47,7 @@ qx.Class.define("polymita.dialog.Logon", {
             this.__model = controller.createModel();
 
             if (window.location.href.match(/https:\/\/127.0.0.1:3002/)) {
-                this.__model.set({ username: 'root', password: 'root' });
+                this.__model.set({ username: 'dev', password: 'dev' });
             }
         },
 

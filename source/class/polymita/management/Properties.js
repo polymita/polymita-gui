@@ -238,10 +238,10 @@ qx.Class.define("polymita.management.Properties", {
                         var msg, i18nCatalog = this.getSettings().properties.i18nCatalog
 
                         if (response.successful) {
-                            msg = polymita.I18n.trans(i18nCatalog, 'Messages', 'SUCCESSFUL-ADD');
+                            msg = polymita.I18n.trans(i18nCatalog, 'Messages', 'SUCCESSFUL-UPDATING');
                             q.messaging.emit('Application', 'good', msg);
                         } else {
-                            msg = polymita.I18n.trans(i18nCatalog, 'Messages', 'FAILED-ADD');
+                            msg = polymita.I18n.trans(i18nCatalog, 'Messages', 'FAILED-UPDATING');
                             q.messaging.emit('Application', 'error', msg);
                         }
                     }, this);

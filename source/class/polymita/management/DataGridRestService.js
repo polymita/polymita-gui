@@ -324,12 +324,12 @@ qx.Class.define("polymita.management.DataGridRestService", {
                 var msg, i18nCatalog = properties.i18n;
 
                 if (response.successful) {
-                    msg = polymita.I18n.trans(i18nCatalog, 'Messages', 'SUCCESSFUL-ADD');
+                    msg = polymita.I18n.trans(i18nCatalog, 'Messages', 'SUCCESSFUL-ADDING');
                     q.messaging.emit('Application', 'good', msg);
                     this.emitMessaging('execute-reload');
                     dlg.close();
                 } else {
-                    msg = polymita.I18n.trans(i18nCatalog, 'Messages', 'FAILED-ADD');
+                    msg = polymita.I18n.trans(i18nCatalog, 'Messages', 'FAILED-ADDING');
                     q.messaging.emit('Application', 'error', msg);
                 }
             }, this);
@@ -345,12 +345,12 @@ qx.Class.define("polymita.management.DataGridRestService", {
                 var msg, i18nCatalog = properties.i18n;
 
                 if (response.successful) {
-                    msg = polymita.I18n.trans(i18nCatalog, 'Messages', 'SUCCESSFUL-UPDATE');
+                    msg = polymita.I18n.trans(i18nCatalog, 'Messages', 'SUCCESSFUL-UPDATING');
                     q.messaging.emit('Application', 'good', msg);
                     this.emitMessaging('execute-reload');
                     dlg.close();
                 } else {
-                    msg = polymita.I18n.trans(i18nCatalog, 'Messages', 'FAILED-UPDATE');
+                    msg = polymita.I18n.trans(i18nCatalog, 'Messages', 'FAILED-UPDATING');
                     q.messaging.emit('Application', 'error', msg);
                 }
             }, this);
