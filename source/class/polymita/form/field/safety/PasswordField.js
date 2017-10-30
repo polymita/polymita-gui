@@ -1,6 +1,9 @@
 qx.Class.define("polymita.form.field.safety.PasswordField", {
     extend: qx.ui.form.PasswordField,
-    include: polymita.form.field.util.MSetProperties,
+    include: [
+        polymita.form.field.util.MSetProperties,
+        polymita.form.field.util.MPatterns
+    ],
 
     statics: {
         cellRendererType: polymita.table.cellrenderer.String,
@@ -20,7 +23,7 @@ qx.Class.define("polymita.form.field.safety.PasswordField", {
                 settings: { required: true, minimum: 4, value: 255 }
             },
             value: {
-                type: polymita.form.field.DateField,
+                type: polymita.form.field.TextField,
                 settings: { required: false }
             },
             pattern: {
@@ -40,19 +43,6 @@ qx.Class.define("polymita.form.field.safety.PasswordField", {
                 type: polymita.form.field.grid.RendererStyle,
                 settings: { required: true, value: '{}' }
             }
-        }
-    },
-
-    properties: {
-        pattern: {
-            check: 'String',
-            // Contain uppercase and lowercase letters, digits, spaces and special char and length >= 6.
-            init: '^.*(?=.{6,})(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_ "]).*$'
-        },
-
-        minLength: {
-            check: 'Integer',
-            init: 0
         }
     }
 });
