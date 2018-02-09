@@ -35,7 +35,6 @@ qx.Mixin.define("polymita.form.field.util.MPatterns", {
          */
         __transformPattern: function (value) {
             var newValue = polymita.I18n.trans('Patterns', 'Values', value, false);
-            console.log(value, newValue);
             return newValue ? newValue : value;
         },
 
