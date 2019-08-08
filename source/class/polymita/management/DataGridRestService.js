@@ -241,8 +241,10 @@ qx.Class.define("polymita.management.DataGridRestService", {
                             return f.showInGrid
                         }),
                         localFieldName = settings.properties.localFieldName,
-                        baseParams = qx.lang.Json.parse(settings.properties.baseParams),
-                        filters = qx.lang.Object.mergeWith(baseParams, customData.filters || {});
+                        filters = {};
+
+                    qx.lang.Object.mergeWith(filters, qx.lang.Json.parse(settings.properties.baseParams));
+                    qx.lang.Object.mergeWith(filters, customData.filters);
 
                     if (localFieldName && filters[localFieldName] === undefined) {
                         filters[localFieldName] = -1;
